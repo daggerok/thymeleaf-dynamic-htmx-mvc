@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head data-th-replace="base :: page_head(~{::title},~{})">
+  <title>htmx</title>
+</head>
+<body data-th-replace="base :: page_body(~{::main})">
+<main hx-boost="true">
+  <form id="create-new-user-form" data-th-object="${createUserFormData}" data-th-action="@{/}" method="post">
+    <input id="create-new-user-input"
+           autocomplete="false"
+           name="name"
+           data-th-field="*{name}" />
+  </form>
+  <ul data-th-each="user : ${users}">
+    <li>[[ ${user.name} ]] <span class="grey">create at: [[ ${user.timestamp} ]]</span></li>
+  </ul>
+</main>
+</body>
+</html>

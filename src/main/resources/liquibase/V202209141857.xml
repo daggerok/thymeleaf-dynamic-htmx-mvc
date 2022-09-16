@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="V202209141450" author="Maksim Kostromin">
+        <comment>Insert test data into `users` table with rollback functionality</comment>
+
+        <insert tableName="users">
+            <column name="id" value="0"/>
+            <column name="name" value="Maksim Kostromin"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="stock">
+                <where>id in (0)</where>
+            </delete>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

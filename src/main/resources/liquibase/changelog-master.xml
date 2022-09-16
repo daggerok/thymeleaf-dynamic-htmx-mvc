@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <!-- H2 data types: https://xenovation.com/blog/development/java/java-professional-developer/liquibase-related-sql-java-types -->
+    <property name="current.timestamp.function" dbms="h2" value="NOW()"/>
+    <property name="instant.type" dbms="h2" value="DATETIME(6)"/>
+    <property name="long.datetime.type" dbms="h2" value="DATETIME(6)"/>
+    <property name="decimal.type" dbms="h2" value="DECIMAL(19,8)"/>
+    <property name="double.type" dbms="h2" value="DOUBLE"/>
+    <property name="boolean.type" dbms="h2" value="BOOLEAN"/>
+    <property name="blob.type" dbms="h2" value="CLOB"/>
+    <property name="longtext.type" dbms="h2" value="CLOB"/>
+    <property name="string.type" dbms="h2" value="VARCHAR(255)"/>
+    <property name="id.type" dbms="h2" value="BIGINT"/>
+
+    <!-- Migrations: -->
+    <include file="classpath*:/liquibase/V202209141848.xml" />
+    <include file="classpath*:/liquibase/V202209141857.xml" />
+
+</databaseChangeLog>
