@@ -1,15 +1,17 @@
 <!doctype html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
-<head data-th-replace="base :: page_head(~{::title},~{})">
+<head data-th-replace="~{base :: page_head(~{::title},~{})}"><!-- see: https://stackoverflow.com/a/75947428/1490636 -->
   <title>htmx</title>
 </head>
-<body data-th-replace="base :: page_body(~{::main})">
+<body data-th-replace="~{base :: page_body(~{::main})}"><!-- see: https://stackoverflow.com/a/75947428/1490636 -->
 <main hx-boost="true">
   <form id="create-new-user-form" data-th-object="${createUserFormData}" data-th-action="@{/}" method="post">
+    <label for="create-new-user-input">
     <input id="create-new-user-input"
            autocomplete="false"
            name="name"
            data-th-field="*{name}" />
+    </label>
   </form>
   <ul data-th-each="user : ${users}">
     <li>[[ ${user.name} ]] <span class="grey">create at: [[ ${user.timestamp} ]]</span></li>
