@@ -5,6 +5,10 @@
 </head>
 <body data-th-replace="~{base :: page_body(~{::main})}"><!-- see: https://stackoverflow.com/a/75947428/1490636 -->
 <main hx-boost="true">
+  <div hx-post="/clicked" hx-swap="innerHTML">
+    <div>Click me</div>
+  </div>
+  <br/><hr/>
   <form id="create-new-user-form" data-th-object="${createUserFormData}" data-th-action="@{/}" method="post">
     <label for="create-new-user-input">
     <input id="create-new-user-input"

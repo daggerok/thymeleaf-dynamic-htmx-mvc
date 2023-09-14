@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.reactive.result.view.Rendering
 import reactor.core.publisher.Mono
 import java.time.Instant
@@ -57,4 +58,8 @@ class IndexPage(private val users: Users) {
     fun createUser(@ModelAttribute createUserFormData: CreateUserFormData) =
         users.save(User(name = createUserFormData.name))
             .then(Mono.just("redirect:/"))
+
+    @ResponseBody
+    @PostMapping("/clicked")
+    fun clicked() = """<p style="color: red;">Hello!</p>"""
 }
