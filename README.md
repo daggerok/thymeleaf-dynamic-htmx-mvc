@@ -14,6 +14,7 @@ open http://127.0.0.1:8080/
 * https://github.com/wimdeblauwe/blog-example-code
 * https://www.wimdeblauwe.com/blog/2022/06/15/thymeleaf-and-htmx-with-out-of-band-swaps/
 * https://www.youtube.com/watch?v=GVq0uzpHYoQ&ab_channel=Devoxx
+* https://www.youtube.com/watch?v=cpzowDDJj24
 
 <!--
 
