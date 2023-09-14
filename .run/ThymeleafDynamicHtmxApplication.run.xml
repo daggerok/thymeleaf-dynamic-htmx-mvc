@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ThymeleafDynamicHtmxApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <option name="ACTIVE_PROFILES" />
-    <module name="thymeleaf-dynamic-htmx" />
+    <module name="thymeleaf-dynamic-htmx-mvn" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="io.github.daggerok.htmx.ThymeleafDynamicHtmxApplication" />
     <method v="2">
       <option name="Make" enabled="true" />
